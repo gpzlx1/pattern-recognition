@@ -44,9 +44,11 @@
 给定训练数据集
 
 ![[公式]](https://www.zhihu.com/equation?tex=%5Cbegin%7Balign%2A%7D+%5C%5C%26+T+%3D+%5Cleft%5C%7B+%5Cleft%28+x_%7B1%7D%2C+y_%7B1%7D+%5Cright%29%2C+%5Cleft%28+x_%7B2%7D%2C+y_%7B2%7D+%5Cright%29%2C+%5Ccdots%2C+%5Cleft%28+x_%7BN%7D%2C+y_%7BN%7D+%5Cright%29+%5Cright%5C%7D+%5Cend%7Balign%2A%7D+%5C%5C)
+
 其中， ![[公式]](https://www.zhihu.com/equation?tex=x_%7Bi%7D+%5Cin+%5Cmathcal%7BX%7D+%3D+R%5E%7Bn%7D%2C+y_%7Bi%7D+%5Cin+%5Cmathcal%7BY%7D+%3D+%5Cleft%5C%7B+%2B1%2C+-1+%5Cright%5C%7D%2C+i+%3D+1%2C+2%2C+%5Ccdots%2C+N) 。求参数 ![[公式]](https://www.zhihu.com/equation?tex=w) 和 ![[公式]](https://www.zhihu.com/equation?tex=b) ，使其为以下损失函数极小化问题的解
 
 ![[公式]](https://www.zhihu.com/equation?tex=%5Cbegin%7Balign%2A%7D+%5C%5C%26+%5Cmin_%7Bw%2Cb%7D+L+%5Cleft%28+w%2C+b+%5Cright%29+%3D+-%5Csum_%7Bx_%7Bi%7D+%5Cin+M%7D+y_%7Bi%7D+%5Cleft%28+w+%5Ccdot+x_%7Bi%7D+%2B+b+%5Cright%29+%5Cend%7Balign%2A%7D+%5C%5C)
+
 其中， ![[公式]](https://www.zhihu.com/equation?tex=M) 为误分类点的集合。
 
 感知机学习算法是误分类驱动的，采用随机梯度下降法 stochastic gradient descent。极小化过程中不是一次使用$M$中所有误分类点的梯度下降，而是一次随机选取一个误分类点使其梯度下降。
@@ -54,9 +56,11 @@
 假设误分类点集合 ![[公式]](https://www.zhihu.com/equation?tex=M) 是固定的，则损失函数 ![[公式]](https://www.zhihu.com/equation?tex=L+%5Cleft%28+w%2C+b+%5Cright%29) 的梯度
 
 ![[公式]](https://www.zhihu.com/equation?tex=%5Cbegin%7Balign%2A%7D+%5C%5C%26+%5Cnabla+_%7Bw%7D+L+%5Cleft%28+w%2C+b+%5Cright%29+%3D+-%5Csum_%7Bx_%7Bi%7D+%5Cin+M%7D+y_%7Bi%7D+x_%7Bi%7D+%5C%5C+%26+%5Cnabla+_%7Bb%7D+L+%5Cleft%28+w%2C+b+%5Cright%29+%3D+-%5Csum_%7Bx_%7Bi%7D+%5Cin+M%7D+y_%7Bi%7D+%5Cend%7Balign%2A%7D+%5C%5C)
+
 随机选取一个误分类点 ![[公式]](https://www.zhihu.com/equation?tex=%5Cleft%28+x_%7Bi%7D%2C+y_%7Bi%7D+%5Cright%29) ，对 ![[公式]](https://www.zhihu.com/equation?tex=w%2C+b) 进行更新：
 
 ![[公式]](https://www.zhihu.com/equation?tex=%5Cbegin%7Balign%2A%7D+%5C%5C%26+w+%5Cleftarrow+w+%2B+%5Ceta+y_%7Bi%7D+x_%7Bi%7D+%5C%5C+%26+b+%5Cleftarrow+b+%2B+%5Ceta+y_%7Bi%7D+%5Cend%7Balign%2A%7D+%5C%5C)
+
 其中， ![[公式]](https://www.zhihu.com/equation?tex=%5Ceta+%5Cleft%28+0+%3C+%5Ceta+%5Cleq+1+%5Cright%29) 是步长，称为学习率。
 
 ### 收敛性
