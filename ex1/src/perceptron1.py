@@ -1,6 +1,7 @@
 import numpy as np
 from drawgif import draw
-lr = 1		#学习率
+import random
+lr = 1	#学习率
 
 if __name__ == "__main__":
     data = []
@@ -13,7 +14,6 @@ if __name__ == "__main__":
     data.append(np.array([-2,-1,-1], dtype=float))
     data.append(np.array([-2,-2,-1], dtype=float))
     data.append(np.array([-1,-3,-1], dtype=float))
-
 
     #init 
     W = np.array([0,0,0], dtype=float)	
@@ -34,4 +34,4 @@ if __name__ == "__main__":
             WList.append(W)
     print(WList)
     print(round)
-    draw(data, WList, "result2")	#绘制动态图
+    draw(data, WList, "result10")	#绘制动态图

@@ -22,16 +22,17 @@ if __name__ == "__main__":
 
     #begin
     while status is False:
-        if round > 20:
+        if round > 50:
             break
         status = True
         round = round + 1
         for i in range(len(data)):
             if np.dot(W, data[i]) <= 0:
-                W = W + 0.5 * data[i]
+                W = W + 0.1 * data[i]
                 status = False
             WList.append(W)
+            print(W)
 
     print(round)
-    draw(data, WList, "result2")
+    draw(data, WList, "result5")
 
