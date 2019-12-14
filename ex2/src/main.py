@@ -49,9 +49,9 @@ def c_mean(s, num_class : int):
 
 
 if __name__ == "__main__":
-    class1 = generate(0, 0, 10, 0)
-    class2 = generate(5, 5, 100, 1)
-    class3 = generate(-5, -5, 100, 2)
+    class1 = generate(0, 0, 1, 1, 5, 0)
+    class2 = generate(5, 5, 1, 1, 100, 1)
+    class3 = generate(-5, -5, 1, 1, 100, 2)
     s = np.vstack((class1, class2, class3))
     draw(s,"before.png")
     centers, s = c_mean(s.copy(), 3)
